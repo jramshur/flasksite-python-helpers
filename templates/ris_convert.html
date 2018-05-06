@@ -1,0 +1,59 @@
+{% extends "/layouts/layout1.html" %}
+{% import "bootstrap/wtf.html" as wtf %} <!-- this is only used for the wtf form ... i think -->
+
+{% block title %}RIS Converter{% endblock %}
+
+
+{% block content %}
+
+<div class="container" style="padding-top:3.5rem">
+
+  <h1>RIS Converter</h1>
+  </br>
+
+
+  <form method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+       {{ form.hidden_tag() }}
+       {{ wtf.form_field(form.photo) }} <!-- wtf.form() allows bootstrap to use bootstrap -->
+    </div>
+       {% for error in form.photo.errors %}
+           <span style="color: red;">{{ error }}</span>
+       {% endfor %}
+       {{ wtf.form_field(form.submit, class='btn btn-primary btn-block') }}
+       <!--{{ form.submit }}-->
+
+  </form>
+
+  {% if file_url %}
+  <br>
+  <img src="{{ file_url }}">
+  {% endif %}
+
+    <hr>
+
+    <!-- Code block -->
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              See the Python Code
+            </button>
+          </h5>
+        </div>
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            <pre><code>
+                {{ content }}
+            </code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div> <!-- container -->
+
+
+
+{% endblock %}

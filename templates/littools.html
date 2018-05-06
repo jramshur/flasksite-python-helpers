@@ -1,0 +1,70 @@
+{% extends "/layouts/layout1.html" %}
+
+{% block title %}Literature Tools{% endblock %}
+
+{% block content %}
+
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a href="#">Home</a></li>
+  <li class="breadcrumb-item active" aria-current="page">Littools</li>
+</ol>
+</nav>
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Literature Tools</h1>
+      <p class="lead text-muted">Tools to help with literature, citation, and bibliography related task.</p>
+    </div>
+  </section>
+
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-3">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src="/static/img/placeholder.svg" alt="Quosa RIS converter">
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h5 class="card-title">QUOSA .ris Converter</h5>
+                <p class="card-text">Convert QUOSA .ris file into a standard format .ris file.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <a class="btn btn-sm btn-outline-secondary" href="/littools/ris_convert/">Go</a>
+                </div>
+              </div>
+              <div class="card-footer text-muted">footer</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src="/static/img/placeholder.svg" alt="Citation Finder">
+              <div class="card-body">
+                <h5 class="card-title">Convert Plain Text to bib file.</h5>
+                <p class="card-text">Tool to convert plain text bibliography into an .ris or bibtex file.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <a class="btn btn-sm btn-outline-secondary" href="http://git.macropus.org/citation-finder/">Go to external site</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src="/static/img/placeholder.svg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Generate inc/exc matrix</h5>
+                <p class="card-text">Generate inclusion/exclusion matrix from Quosa .csv export.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Comming soon</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- row -->
+      </div> <!-- container -->
+    </div> <!-- album -->
+
+{% endblock %}

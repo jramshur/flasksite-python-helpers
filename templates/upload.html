@@ -1,0 +1,33 @@
+{% extends "/layouts/layout1.html" %}
+
+{% block title %}Upload{% endblock %}
+
+
+{% block content %}
+
+<div class="container" style="padding-top:3.5rem">
+
+  <h1>Photo Uploader</h1>
+
+
+  <form method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+       {{ form.hidden_tag() }}
+       {{ form.photo }}
+       {% for error in form.photo.errors %}
+           <span style="color: red;">{{ error }}</span>
+       {% endfor %}
+       {{ form.submit }}
+     </div>
+  </form>
+</div>
+
+
+  {% if file_url %}
+  <br>
+  <img src="{{ file_url }}">
+  {% endif %}
+
+</div>
+
+{% endblock %}
